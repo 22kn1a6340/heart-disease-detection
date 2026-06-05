@@ -1,49 +1,21 @@
-# ❤️ Heart Disease Detection Using Deep Learning
+# Heart Disease Detection Using Deep Learning
 
-## 📌 Project Overview
-Heart Disease Detection Using Deep Learning is a machine learning project designed to predict the likelihood of heart disease based on patient health parameters. The system analyzes medical data and provides predictions to assist in early diagnosis.
+## Project Overview
+This project predicts heart disease using deep learning techniques and patient health data.
 
-## 🎯 Objectives
-- Predict heart disease using patient health data
-- Improve accuracy through deep learning techniques
-- Support early detection and healthcare decision-making
-
-## 🛠 Technologies Used
+## Technologies Used
 - Python
-- TensorFlow / Keras
-- NumPy
+- TensorFlow
 - Pandas
+- NumPy
 - Matplotlib
-- Jupyter Notebook
 
-## 📊 Dataset
-The model is trained on a heart disease dataset containing patient attributes such as:
-- Age
-- Gender
-- Blood Pressure
-- Cholesterol
-- Heart Rate
-- Other medical parameters
+## Features
+- Data preprocessing
+- Model training
+- Heart disease prediction
+- Accuracy evaluation
 
-## ⚙️ Project Workflow
-1. Data Collection
-2. Data Preprocessing
-3. Feature Selection
-4. Model Training
-5. Model Evaluation
-6. Heart Disease Prediction
-
-## 📈 Results
-- Achieved good prediction accuracy using deep learning techniques.
-- Successfully classified patients based on heart disease risk.
-
-## 🚀 Future Enhancements
-- Deploy as a web application
-- Integrate real-time patient data
-- Improve model accuracy with larger datasets
-
-## 👩‍💻 Author
-**Mungamuri Rajeswari**
-B.Tech Computer Science Engineering
-
+## Author
+Mungamuri Rajeswari
 GitHub: https://github.com/22kn1a6340
