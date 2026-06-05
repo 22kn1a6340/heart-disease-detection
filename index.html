@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/images/bg.jpg'); /* 🔥 Add your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffffdd;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 34px;
+        }
+
+        .nav {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #005eff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: #4e7092;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .info-box h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        ul li, ol li { 
+            margin-bottom: 8px; 
+        }
+
+        #model-status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<div class="overlay">
+    <div class="container">
+        <h1>Deep learning based automatic detection of heart disease using echo cardiogram</h1>
+
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="/training">Training</a>
+            <a href="/prediction">Prediction</a>
+            <a href="/about">About Us</a>
+
+        </div>
+
+        <div class="info-box">
+            <h2>Deep learning based automatic detection of heart disease using echo cardiogram</h2>
+            <p>This application allows you to:</p>
+            <ul>
+                <li>Train custom image classification models</li>
+                <li>Upload and classify images using trained models</li>
+                <li>Monitor training progress in real-time</li>
+            </ul>
+
+            <h3>System Information:</h3>
+            <p><strong>Device:</strong> {{ device }}</p>
+            <p><strong>Status:</strong> <span id="model-status">Loading...</span></p>
+        </div>
+
+        <div>
+            <h3>Quick Start:</h3>
+            <ol>
+                <li>Go to <a href="/training">Training</a> to train a new model</li>
+                <li>Go to <a href="/prediction">Prediction</a> to classify images</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script>
+    fetch('/check_model_status')
+        .then(response => response.json())
+        .then(data => {
+            const statusElement = document.getElementById('model-status');
+            if (data.model_loaded) {
+                statusElement.innerHTML = `Model Loaded (${data.classes.length} classes)`;
+                statusElement.style.color = 'lightgreen';
+            } else {
+                statusElement.innerHTML = 'No model loaded';
+                statusElement.style.color = 'red';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('model-status').innerHTML = 'Error checking status';
+        });
+</script>
+
+</body>
+</html>

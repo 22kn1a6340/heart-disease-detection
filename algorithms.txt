@@ -1,0 +1,110 @@
+1️⃣ Deep Learning Models (CNN / DNN)
+
+These are used for image classification (heart disease detection from echocardiograms or general medical images):
+
+Convolutional Neural Networks (CNNs)
+
+SimpleCNN – Standard small CNN for basic classification.
+
+Convolution layers → ReLU → MaxPooling → Fully connected → Softmax
+
+FastCNN – Lightweight CNN optimized for faster training.
+
+DNN – Fully connected deep neural network (without convolutions) for small datasets.
+
+Used for:
+
+Predicting classes like cardio_vascular_disease_, coronary_artery_disease, etc.
+
+Training accuracy/loss graphs.
+
+2️⃣ Image Preprocessing
+
+Before feeding images to models:
+
+Resize images (to image_size x image_size)
+
+Convert to RGB
+
+Normalize using ImageNet mean & std:
+
+mean = [0.485, 0.456, 0.406]
+std  = [0.229, 0.224, 0.225]
+
+
+Convert to Tensor (C x H x W)
+
+Algorithm:
+
+tensor = (image - mean) / std
+tensor = tensor.permute(2,0,1)  # Channels first
+
+3️⃣ Training Algorithm
+
+Optimizer: Adam
+
+Loss: CrossEntropyLoss
+
+Mini-batch gradient descent
+
+Epoch-wise update:
+
+Forward pass: compute outputs
+
+Compute loss
+
+Backward pass: loss.backward()
+
+Update weights: optimizer.step()
+
+Track metrics:
+
+Loss per epoch
+
+Accuracy per epoch
+
+Memory usage
+
+4️⃣ Prediction Algorithm
+
+Preprocess uploaded image → tensor
+
+Forward pass through trained model
+
+Compute softmax probabilities → predicted class with confidence
+
+Return JSON with:
+
+Predicted label
+
+Confidence
+
+Probabilities of all classes
+
+5️⃣ Authentication Algorithm
+
+User registration & login:
+
+Password hashed using werkzeug.security.generate_password_hash
+
+Verify with check_password_hash
+
+Role-based access:
+
+Admin → Training page
+
+User → Prediction page
+
+Session management with Flask session
+
+6️⃣ Optional System/Utility Algorithms
+
+Memory usage tracking: psutil
+
+Model checkpointing:
+
+Save: torch.save({'model_state_dict':..., 'label_to_idx':..., 'model_type':...})
+
+Load: torch.load + load_state_dict
+
+Image thumbnail generation (PIL)

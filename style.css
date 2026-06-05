@@ -1,0 +1,249 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+body {
+    background-color: #f4f6f9;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Smooth transitions everywhere */
+* {
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   CARD STYLING
+========================================= */
+.card {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    /* Added padding for better content spacing */
+    will-change: transform;
+    /* Improve performance of transform animations */
+    cursor: default;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.6px;
+    user-select: none;
+}
+
+/* =========================================
+   INPUTS & BUTTONS
+========================================= */
+.form-control {
+    border-radius: 0.5rem;
+    padding: 12px 14px;
+    border: 1.5px solid #d0d4da;
+    font-size: 1rem;
+    outline-offset: 2px;
+}
+
+.form-control:focus {
+    border-color: #4da1ff;
+    box-shadow: 0 0 6px rgba(77, 161, 255, 0.4);
+}
+
+/* Button base style */
+.btn {
+    border-radius: 0.5rem;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Primary button with gradient and subtle shadow */
+.btn-primary {
+    background: linear-gradient(90deg, #0069d9, #0056b3);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 105, 217, 0.3);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+    background: linear-gradient(90deg, #0056b3, #004095);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 80, 147, 0.45);
+    outline: none;
+}
+
+/* Disabled button */
+.btn-primary:disabled {
+    background: #a6badc;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: linear-gradient(90deg, #6c757d, #5a6268);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:focus:not(:disabled) {
+    background: linear-gradient(90deg, #5a6268, #4e555b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(78, 85, 91, 0.45);
+    outline: none;
+}
+
+/* =========================================
+   ALERT STYLES
+========================================= */
+.alert {
+    border-radius: 0.5rem;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   TABLE & HOVER EFFECTS
+========================================= */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+/* =========================================
+   PROBABILITY BAR
+========================================= */
+.probability-bar {
+    height: 22px;
+    background-color: #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1.5px solid #d1d5da;
+}
+
+.probability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    border-radius: 12px;
+    transition: width 0.4s ease;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================================
+   IMAGE PREVIEW
+========================================= */
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: 12px;
+    object-fit: cover;
+    user-select: none;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px;
+    background: linear-gradient(120deg, #f0f4ff 0%, #d9e8ff 100%);
+    color: #1a1a1a;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffffdd;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(40, 60, 90, 0.1);
+}
+
+h1, h2, h3 {
+    color: #0a3d62;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.7px;
+}
+
+.nav {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #2d79c7;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.25s ease;
+}
+
+.nav a:hover, .nav a:focus {
+    color: #173a72;
+    text-decoration: underline;
+}
+
+.info-box {
+    background: #f5f9ff;
+    padding: 22px 28px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(44, 76, 122, 0.1);
+    margin: 22px 0;
+    color: #2e4057;
+    line-height: 1.5;
+}
+
+.info-box strong {
+    color: #1a293b;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 9px;
+    font-size: 1rem;
+}
+
+#model-status {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+a {
+    color: #2d79c7;
+}
+
+a:hover {
+    color: #155799;
+    text-decoration: underline;
+}
