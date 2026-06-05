@@ -17,9 +17,9 @@ This project predicts heart disease using deep learning techniques and patient h
 - Accuracy evaluation
   
 ## screenshots
-![output 1] (output1.png)
-![output 2] (output2.png)
-![output 3] (output3.png)
+![output 1](output1.png)
+![output 2](output2.png)
+![output 3](output3.png)
 
 ## Author
 Mungamuri Rajeswari
